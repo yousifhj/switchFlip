@@ -5,10 +5,13 @@ const color = document.querySelector(".color");
 btn.addEventListener("click", function () {
   let neutralColor = "#";
   for (let i = 0; i < 6; i++) {
-    neutralColor = neutral[0];
+    neutralColor += neutral[getRandomNumber()];
   }
 
   color.textContent = neutralColor;
   document.body.style.backgroundColor = neutralColor;
 });
 
+function getRandomNumber() {
+    return Math.floor(Math.random() * neutral.length);
+}
